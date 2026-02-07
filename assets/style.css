@@ -66,6 +66,7 @@ h1{
   color:var(--text);
   text-decoration:none;
   font-size:14px;
+  cursor:pointer;
 }
 .btn:hover{ background:rgba(0,0,0,0.03); }
 .btn.primary{ background:var(--blue); color:#fff; border-color:transparent; }
@@ -265,16 +266,17 @@ a:hover{ color:var(--blueHover); }
   }
 }
 
-/* ===== Resume PDF sizing (make it readable) ===== */
+/* ===== Resume PDF sizing (bigger + readable) ===== */
 .pdf{
   background:#fff;
   border:1px solid var(--border);
   border-radius:16px;
   overflow:hidden;
 
-  /* BIG + responsive: nearly full screen height */
-  height: calc(100vh - 170px);
-  min-height: 900px;
+  /* make the PDF area big */
+  height: calc(100vh - 220px);
+  min-height: 950px;
+  width: 100%;
 }
 
 .pdf iframe{
