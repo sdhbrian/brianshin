@@ -21,10 +21,11 @@
       <div class="divider"></div>
 
       <!-- Intro -->
-      <section class="hero hero-tight">
-        <h1>Projects.</h1>
+      <section class="hero">
+        <h1>Hi, I’m Brian.</h1>
         <p class="subtitle">
-          A scroll-through showcase. Each section is a project — tap “Learn more” for details.
+          I’m an economics and political science student building finance and data projects.
+          Here are a few things I’ve worked on.
         </p>
       </section>
     </div>
@@ -46,7 +47,6 @@
 
                 <div class="stage-actions">
                   <a class="btn primary" href="costco-valuation.html">Learn more</a>
-                  <a class="btn" href="resume.html">See resume</a>
                 </div>
 
                 <div class="badges">
@@ -129,7 +129,6 @@
         <div class="actions">
           <a class="btn primary" href="mailto:brianshin1012@gmail.com">Email</a>
           <a class="btn" href="https://www.linkedin.com/in/brian-shin-259339202" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="resume.html">Resume</a>
         </div>
       </section>
     </main>
@@ -157,8 +156,6 @@
         const vh = window.innerHeight;
         stages.forEach(stage => {
           const rect = stage.getBoundingClientRect();
-          // When rect top is at bottom of viewport -> 0
-          // When rect top passes top by 60% viewport -> 1
           const start = vh * 0.85;
           const end = -vh * 0.35;
           const p = (start - rect.top) / (start - end);
