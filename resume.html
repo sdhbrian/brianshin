@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container container-wide">
       <header class="topbar">
         <div class="brand">Brian Shin</div>
         <nav>
@@ -22,19 +22,32 @@
 
       <section class="hero hero-tight">
         <h1>Resume</h1>
-        <p class="subtitle">Embedded PDF below.</p>
+        <p class="subtitle">View it on-page or download the PDF.</p>
 
         <div class="actions">
           <a class="btn primary" href="resume.pdf" download>Download PDF</a>
           <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+
+          <!-- Zoom controls -->
+          <button class="btn" type="button" onclick="setZoom(100)">100%</button>
+          <button class="btn" type="button" onclick="setZoom(125)">125%</button>
+          <button class="btn" type="button" onclick="setZoom(150)">150%</button>
         </div>
       </section>
 
       <section class="section">
         <div class="pdf">
-          <iframe src="resume.pdf"></iframe>
+          <!-- Fit-to-width + zoom (most browsers respect this) -->
+          <iframe id="resumeFrame" src="resume.pdf#view=FitH&zoom=125" title="Resume PDF"></iframe>
         </div>
       </section>
     </div>
+
+    <script>
+      function setZoom(z) {
+        const frame = document.getElementById("resumeFrame");
+        frame.src = `resume.pdf#view=FitH&zoom=${z}`;
+      }
+    </script>
   </body>
 </html>
