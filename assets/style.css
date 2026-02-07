@@ -22,6 +22,9 @@ body{
 
 .container{ max-width:980px; margin:0 auto; padding:28px 18px; }
 
+/* Optional: use <div class="container container-wide"> on resume page */
+.container-wide{ max-width:1180px; }
+
 .topbar{ display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 0; }
 .brand{ font-weight:600; letter-spacing:-0.2px; }
 nav{ display:flex; gap:14px; flex-wrap:wrap; }
@@ -241,7 +244,7 @@ a:hover{ color:var(--blueHover); }
 
 .visual-note{
   margin: 10px 0 0;
-  color: var(--muted);
+  color:var(--muted);
   font-size: 13px;
   text-align: right;
 }
@@ -260,4 +263,22 @@ a:hover{ color:var(--blueHover); }
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* ===== Resume PDF sizing (make it readable) ===== */
+.pdf{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+
+  /* BIG + responsive: nearly full screen height */
+  height: calc(100vh - 170px);
+  min-height: 900px;
+}
+
+.pdf iframe{
+  width:100%;
+  height:100%;
+  border:0;
 }
