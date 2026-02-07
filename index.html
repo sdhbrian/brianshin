@@ -46,7 +46,7 @@
                 </p>
 
                 <div class="stage-actions">
-                  <a class="btn primary" href="costco-valuation.html">Learn more</a>
+                  <a class="btn solid" href="costco-valuation.html">Learn more</a>
                 </div>
 
                 <div class="badges">
@@ -57,7 +57,6 @@
               </div>
 
               <div class="stage-visual reveal">
-                <!-- “Apple-like product visual” placeholder -->
                 <div class="device">
                   <div class="device-top">
                     <div class="dot"></div><div class="dot"></div><div class="dot"></div>
@@ -92,7 +91,7 @@
                 </p>
 
                 <div class="stage-actions">
-                  <a class="btn primary" href="project-2.html">Learn more</a>
+                  <a class="btn solid" href="project-2.html">Learn more</a>
                   <a class="btn" href="mailto:brianshin1012@gmail.com">Email</a>
                 </div>
 
@@ -127,18 +126,16 @@
         <h2 class="end-title">Want to chat?</h2>
         <p class="subtitle">Email or LinkedIn works best.</p>
         <div class="actions">
-          <a class="btn primary" href="mailto:brianshin1012@gmail.com">Email</a>
+          <a class="btn solid" href="mailto:brianshin1012@gmail.com">Email</a>
           <a class="btn" href="https://www.linkedin.com/in/brian-shin-259339202" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </section>
     </main>
 
     <script>
-      // Apple-ish scroll reveal + smooth progress
       const stages = Array.from(document.querySelectorAll(".stage"));
       const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // Reveal when stage enters view
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) e.target.classList.add("in");
@@ -147,7 +144,6 @@
 
       stages.forEach(s => io.observe(s));
 
-      // Progress-based animation (0..1) per stage (for subtle parallax/scale)
       let ticking = false;
       function update() {
         ticking = false;
