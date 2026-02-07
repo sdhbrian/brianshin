@@ -1,18 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 :root{
   --bg:#fff;
   --text:#111;
   --muted:#6e6e73;
   --border:#e5e5ea;
-  --panel:#f5f5f7;
+  --panel:#f6f6f8;     /* slightly less Apple-y than f5f5f7 */
   --blue:#0071e3;
   --blueHover:#0077ed;
-  --radius:18px;
+  --radius:14px;
 }
 
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family: Inter, system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.55;
@@ -27,13 +29,14 @@ body{
 
 .topbar{ display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 0; }
 .brand{ font-weight:600; letter-spacing:-0.2px; }
-nav{ display:flex; gap:14px; flex-wrap:wrap; }
+
+nav{ display:flex; gap:10px; flex-wrap:wrap; }
 nav a{
   color:var(--muted);
   text-decoration:none;
   font-size:14px;
   padding:8px 10px;
-  border-radius:12px;
+  border-radius:10px;
 }
 nav a:hover{ color:var(--text); background:rgba(0,0,0,0.04); }
 
@@ -41,12 +44,14 @@ nav a:hover{ color:var(--text); background:rgba(0,0,0,0.04); }
 
 .hero{ padding:52px 0 28px; }
 .hero-tight{ padding-top:26px; }
+
 h1{
   margin:0 0 10px;
   font-size:clamp(34px,5vw,56px);
-  letter-spacing:-0.8px;
+  letter-spacing:-0.6px;   /* slightly less “Apple headline” */
   line-height:1.05;
 }
+
 .subtitle{
   margin:0;
   max-width:70ch;
@@ -55,12 +60,13 @@ h1{
 }
 
 .actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   padding:10px 14px;
-  border-radius:999px;
+  border-radius:14px;            /* less “Apple pill” */
   border:1px solid var(--border);
   background:#fff;
   color:var(--text);
@@ -69,8 +75,25 @@ h1{
   cursor:pointer;
 }
 .btn:hover{ background:rgba(0,0,0,0.03); }
-.btn.primary{ background:var(--blue); color:#fff; border-color:transparent; }
-.btn.primary:hover{ background:var(--blueHover); }
+
+/* Main CTA (NOT blue) */
+.btn.solid{
+  background:var(--text);
+  color:#fff;
+  border-color:var(--text);
+}
+.btn.solid:hover{
+  background:#000;
+  border-color:#000;
+}
+
+/* Blue ONLY for downloadable buttons */
+.btn.download{
+  background:var(--blue);
+  color:#fff;
+  border-color:transparent;
+}
+.btn.download:hover{ background:var(--blueHover); }
 
 a{ color:var(--blue); }
 a:hover{ color:var(--blueHover); }
@@ -88,7 +111,6 @@ a:hover{ color:var(--blueHover); }
 /* ===== Apple-like scrolling stages ===== */
 .stages{ background:var(--bg); }
 .stage{
-  /* extra height so sticky section “pins” while you scroll */
   min-height: 170vh;
   border-top: 1px solid var(--border);
   --p: 0;
@@ -124,12 +146,14 @@ a:hover{ color:var(--blueHover); }
   letter-spacing:0.2px;
   text-transform:uppercase;
 }
+
 .stage-title{
   margin:0 0 10px;
   font-size: clamp(28px, 4vw, 44px);
-  letter-spacing:-0.6px;
+  letter-spacing:-0.4px;
   line-height:1.05;
 }
+
 .stage-subtitle{
   margin:0;
   color:var(--muted);
@@ -150,7 +174,7 @@ a:hover{ color:var(--blueHover); }
   transform: translateY(0);
 }
 
-/* progress-based motion (subtle Apple feel) */
+/* progress-based motion */
 .stage-copy{
   transform: translateY(calc((1 - var(--p)) * 10px));
 }
@@ -255,7 +279,7 @@ a:hover{ color:var(--blueHover); }
 .end-title{
   margin:0 0 10px;
   font-size: clamp(26px, 3vw, 36px);
-  letter-spacing:-0.5px;
+  letter-spacing:-0.4px;
 }
 
 /* accessibility */
@@ -273,7 +297,6 @@ a:hover{ color:var(--blueHover); }
   border-radius:16px;
   overflow:hidden;
 
-  /* make the PDF area big */
   height: calc(100vh - 220px);
   min-height: 950px;
   width: 100%;
